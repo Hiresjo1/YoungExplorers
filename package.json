@@ -1,0 +1,14 @@
+{
+  "name": "leafletworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Control.OSMGeocoder.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "jordan hires",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^9.0.0"
+  }
+}

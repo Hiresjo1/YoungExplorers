@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>leafletworld
+
+	</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="server.js"></script>
+	<script src="../Control.OSMGeocoder.js"></script>
+	<link rel="stylesheet" href="../Control.OSMGeocoder.css" />
+
+	<!--<script src="https://rawgit.com/k4r573n/leaflet-control-osm-geocoder/master/Control.OSMGeocoder.js"></script>-->
+	<!--<link rel="stylesheet" href="https://rawgit.com/k4r573n/leaflet-control-osm-geocoder/master/Control.OSMGeocoder.css" />-->
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+ #map {
+      height: 100%;
+      width: 100%;
+    }
+
+/* Style the header */
+.header {
+    background-color: black;
+    padding: 50px;
+		text-align: center;
+		color: white;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+		width: 33.33%;
+		text-align: center;
+		color: white;
+    padding: 10px;
+    height: 500px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+.footer {
+    background-color: black;
+    padding: 10px;
+		text-align: center;
+		color: white;
+		height: 200px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+		<div class="header">
+				<h1>Young Explorers!</h1>
+			</div>
+
+
+<div class="row">
+	<div class="column" style="background-color: purple">
+			<h2>Can you find the original 7 wonders of the world?</h2>
+			<li><a href ="https://www.thoughtco.com/the-colossus-at-rhodes-1434531">The Colossus of Rhodes</a></li>
+			<li><a href ="https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza">The Great Pyramid of Giza</a></li>
+			<li><a href ="https://www.ancient.eu/article/129/the-hanging-gardens-of-babylon-the-mysterious-wond/">The Hanging Gardens of Babylon</a></li>
+			<li><a href = "https://www.britannica.com/topic/Pharos-of-Alexandria">The Lighthouse of Alexandria</a></li>
+			<li><a href ="https://www.thoughtco.com/the-mausoleum-at-halicarnassus-1434535">The Mausoleum at Halicarnassus</a></li>
+			<li><a href ="https://www.thoughtco.com/statue-of-zeus-at-olympia-1434526">The Statue of Zues at Olympia</a></li>
+			<li><a href ="https://www.thoughtco.com/temple-of-artemis-at-ephesus-1435670">The Temple of Artemis at Ephesus</a></li>
+	</div>
+	<div class="column" style="background-color: yellow">
+			<div id="map" >
+					
+				</div>
+	</div>
+	<div class="column" style="background-color: purple">
+		<h2>How about the 7 wonders of the Modern World?</h2>
+		<li><a href ="http://www.telegraph.co.uk/travel/destinations/europe/france/articles/The-Channel-Tunnel-20-fascinating-facts/">Channel Tunnel</a></li>
+		<li><a href ="https://en.wikipedia.org/wiki/CN_Tower">CN Tower</a></li>
+		<li><a href ="http://www.history.com/news/history-lists/10-surprising-facts-about-the-empire-state-building">Empire State Building</a></li>
+		<li><a href ="https://www.nps.gov/prsf/planyourvisit/golden-gate-bridge.htm">Golden Gate Bridge</a></li>
+		<li><a href ="http://www.unmuseum.org/7wonders/megadam.htm">Itaipu Dam</a></li>
+		<li><a href ="https://www.thoughtco.com/seven-wonders-of-the-modern-world-1434539">Netherlands North Sea Protection Works</a></li>
+		<li><a href ="https://www.thoughtco.com/panama-canal-overview-1435562">Panama Canal</a></li></div>
+ 
+		
+		
+	
+	
+		<script type="text/javascript">
+				
+					var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+					var osmAttrib='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+					var osm = new L.TileLayer(osmUrl, {attribution: osmAttrib});
+			var map = new L.Map('map').addLayer(osm).setView([32.083541, -81.099834], 6);
+	
+			var osmGeocoder = new L.Control.OSMGeocoder({placeholder: 'Search location...'});
+	
+			map.addControl(osmGeocoder);
+
+		
+		</script>
+		
+</div>
+
+<div class="footer">
+  <p>Copyright@YoungExplorers2017!</p>
+</div>
+	</style>
+</head>
+<body>
+
+	
+
+
+
+</body>
+</html>
